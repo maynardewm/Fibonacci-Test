@@ -1,0 +1,21 @@
+<script>
+var fibonacci = (() => {
+	var memo = {};
+	return f = (n) => {
+		var val;
+	    if (n in memo) {
+			val = memo[n];
+	    } else {
+			if (n <= 1) {
+				val = n;
+			} else {
+				val = f(n - 1) + f(n - 2);
+			}
+			memo[n] = val;
+			console.log(memo)
+	    }
+	    return val;
+	};
+})();
+document.write(fibonacci(7))
+</script>
